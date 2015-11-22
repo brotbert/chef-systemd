@@ -30,7 +30,7 @@ class Chef::Resource
   class SystemdUnit < Chef::Resource::SystemdConf
     include Chef::Mixin::ParamsValidate
 
-    resource_name :systemd_unit
+    resource_name :systemd_unit if respond_to?(:resource_name)
 
     actions :create, :delete, :enable, :disable, :reload, :restart,
             :start, :stop, :mask, :unmask, :set_properties

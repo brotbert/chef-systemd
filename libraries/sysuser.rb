@@ -25,7 +25,7 @@ class Chef::Resource
   # resource for declarative allocation of system users and groups
   # http://www.freedesktop.org/software/systemd/man/sysusers.d.html
   class SystemdSysuser < Chef::Resource::LWRPBase
-    resource_name :systemd_sysuser
+    resource_name :systemd_sysuser if respond_to?(:resource_name)
 
     actions :create, :delete
     default_action :create

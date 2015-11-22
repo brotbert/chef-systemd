@@ -26,7 +26,7 @@ class Chef::Resource
   # resource for configuring kernel parameters at boot
   # http://man7.org/linux/man-pages/man5/sysctl.d.5.html
   class SystemdSysctl < Chef::Resource::LWRPBase
-    resource_name :systemd_sysctl
+    resource_name :systemd_sysctl if respond_to?(:resource_name)
 
     actions :create, :delete, :apply
     default_action :create

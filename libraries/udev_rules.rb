@@ -33,7 +33,7 @@ class Chef::Resource
       NAME OWNER GROUP MODE SECLABEL RUN LABEL GOTO TAG
     )
 
-    resource_name :systemd_udev_rules
+    resource_name :systemd_udev_rules if respond_to?(:resource_name)
 
     actions :create, :delete, :disable
     default_action :create

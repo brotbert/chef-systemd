@@ -27,7 +27,7 @@ class Chef::Resource
   # resource for systemd network device configuration
   # http://www.freedesktop.org/software/systemd/man/systemd.link.html
   class SystemdNetworkdLink < Chef::Resource::LWRPBase
-    resource_name :systemd_networkd_link
+    resource_name :systemd_networkd_link if respond_to?(:resource_name)
 
     actions :create, :delete
     default_action :create

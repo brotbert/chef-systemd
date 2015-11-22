@@ -27,7 +27,7 @@ class Chef::Resource
   # resource for managing systemd-bootchart
   # http://www.freedesktop.org/software/systemd/man/systemd-bootchart.html
   class SystemdBootchart < Chef::Resource::SystemdUtil
-    resource_name :systemd_bootchart
+    resource_name :systemd_bootchart if respond_to?(:resource_name)
 
     def conf_type(_ = nil)
       :bootchart
@@ -39,7 +39,7 @@ class Chef::Resource
   # resource for managing systemd-coredump
   # http://www.freedesktop.org/software/systemd/man/systemd-coredump.html
   class SystemdCoredump < Chef::Resource::SystemdUtil
-    resource_name :systemd_coredump
+    resource_name :systemd_coredump if respond_to?(:resource_name)
 
     def conf_type(_ = nil)
       :coredump
@@ -51,7 +51,7 @@ class Chef::Resource
   # resource for managing systemd-sleep
   # http://www.freedesktop.org/software/systemd/man/systemd-sleep.html
   class SystemdSleep < Chef::Resource::SystemdUtil
-    resource_name :systemd_sleep
+    resource_name :systemd_sleep if respond_to?(:resource_name)
 
     def conf_type(_ = nil)
       :sleep
@@ -63,7 +63,7 @@ class Chef::Resource
   # resource for managing systemd system mode defaults
   # http://www.freedesktop.org/software/systemd/man/systemd-system.conf.html
   class SystemdSystem < Chef::Resource::SystemdUtil
-    resource_name :systemd_system
+    resource_name :systemd_system if respond_to?(:resource_name)
 
     def conf_type(_ = nil)
       :system
@@ -79,7 +79,7 @@ class Chef::Resource
   # resource for managing systemd user mode defaults
   # http://www.freedesktop.org/software/systemd/man/systemd-user.conf.html
   class SystemdUser < Chef::Resource::SystemdUtil
-    resource_name :systemd_user
+    resource_name :systemd_user if respond_to?(:resource_name)
 
     def conf_type(_ = nil)
       :user
